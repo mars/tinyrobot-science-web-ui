@@ -1,7 +1,7 @@
 {
-  "name": "heroku-nextjs",
+  "name": "tinyrobot-science-web-ui",
   "version": "1.0.0",
-  "description": "Deploy Next.js server-side React apps to Heroku",
+  "description": "Next.js web UI for tinyrobot.science",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mars/heroku-nextjs.git"
+    "url": "git+https://github.com/mars/tinyrobot-science-web-ui.git"
   },
   "keywords": [
     "react",
@@ -23,11 +23,11 @@
   "author": "Mars Hall",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mars/heroku-nextjs/issues"
+    "url": "https://github.com/mars/tinyrobot-science-web-ui/issues"
   },
-  "homepage": "https://github.com/mars/heroku-nextjs#readme",
+  "homepage": "https://github.com/mars/tinyrobot-science-web-ui#readme",
   "dependencies": {
-    "next": "6.1.1",
+    "next": "^6.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
