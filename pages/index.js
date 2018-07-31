@@ -44,7 +44,7 @@ const IndexPage = (props) => (
 IndexPage.getInitialProps = async ({ req }) => {
   const API_URL = process && process.env && process.env.API_URL;
   if (API_URL) {
-    const res = await fetch(`${API_URL}/hipku`, { method: "POST" });
+    const res = await fetch(`${API_URL}/hipku/${req.ip}`, { method: "POST" });
     const data = await res.json();
     return data;
   } else {
