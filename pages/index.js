@@ -1,8 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import fetch from 'isomorphic-fetch'
+
 import Logo from '../components/logo'
 
-export default () => (
+const IndexPage = (props) => (
   <div className="root">
     <Head>
       <meta charSet="utf-8"/>
@@ -10,11 +12,15 @@ export default () => (
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <title>tinyrobot.science</title>
     </Head>
+    <style jsx global>{`
+      body {
+        background-color: cornsilk;
+      }
+    `}</style>
     <style jsx>{`
       .root {
         font-family: sans-serif;
-        line-height: 1.33rem;
-        bottom: 8vh;
+        margin: 10vh 0;
       }
       @media (min-width: 600px) {
         .root {
@@ -22,13 +28,28 @@ export default () => (
           margin-right: 21vw;
         }
       }
-    `}</style>
-    <style jsx global>{`
-      body {
-        background-color: cornsilk;
+      p {
+        text-align: center;
+        font-size: 3rem;
+        line-height: 2.5rem;
       }
     `}</style>
 
-    <Logo className="logo"/>
+    <p>{props.hipku}</p>
+
+    <Logo/>
   </div>
 )
+
+IndexPage.getInitialProps = async ({ req }) => {
+  const API_URL = process && process.env && process.env.API_URL;
+  if (API_URL) {
+    const res = await fetch(`${API_URL}/hipku`, { method: "POST" });
+    const data = await res.json();
+    return data;
+  } else {
+    return { hipku: "In nothing everything is possible" };
+  }
+}
+
+export default IndexPage;

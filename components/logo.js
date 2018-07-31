@@ -1,10 +1,18 @@
 import React from 'react'
 
 // Robot by Rutmer Zijlstra from the Noun Project
-export default (props) => <svg viewBox="0 0 100 100" {...props}>
+export default (props) => <svg
+  className="root"
+  viewBox="0 0 100 100"
+  {...props}>
+
   <title>Based on "Robot" by Rutmer Zijlstra from the Noun Project</title>
 
   <style jsx>{`
+    .root {
+      transform: scale(0.3, 0.3);
+      transform-origin: top center;
+    }
     .robot {
       fill: ${props.robotFill || 'cornflowerblue'};
     }

@@ -18,5 +18,5 @@ Built with [Next.js](https://nextjs.org/) on Heroku.
 ```bash
 cd tinyrobot-science-web-ui/
 npm install
-npm run dev
+API_URL=http://127.0.0.1:5001 npm run dev
 ```
