@@ -2,6 +2,12 @@
 
 Built with [Next.js](https://nextjs.org/) on Heroku.
 
+### Part of a reference suite
+
+| [Terraform config](https://github.com/mars/tinyrobot-science-terraform) | Web UI | [API](https://github.com/mars/tinyrobot-science-api) |
+|-----------|------------|---------|
+| infrastructure | front-end app (this repo) | backend app |
+
 ## Requires
 
 * Heroku
