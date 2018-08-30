@@ -14,10 +14,10 @@ export default (props) => <svg
       transform-origin: top center;
     }
     .robot {
-      fill: ${props.robotFill || 'white'};
+      fill: ${props.robotFill || 'saffron'};
     }
     .robot-face {
-      fill: ${props.robotFaceFill || 'cornflowerblue'};
+      fill: ${props.robotFaceFill || 'white'};
     }
     .shadow {
       fill: ${props.shadowFill || 'slategrey'};
