@@ -14,7 +14,7 @@ export default (props) => <svg
       transform-origin: top center;
     }
     .robot {
-      fill: ${props.robotFill || 'cornflowerblue'};
+      fill: ${props.robotFill || 'darkorange'};
     }
     .robot-face {
       fill: ${props.robotFaceFill || 'white'};
