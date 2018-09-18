@@ -1,4 +1,6 @@
 const express = require('express');
+const logger = require('morgan');
+const uuid = require('node-uuid');
 const next = require('next');
 const path = require('path');
 const url = require('url');
@@ -41,6 +43,12 @@ if (!dev && cluster.isMaster) {
           res.redirect("https://" + req.headers.host + req.url);
         });
       }
+
+      // Use Heroku's request ID (or a new UUID)
+      // https://devcenter.heroku.com/articles/http-request-id
+      logger.token('id', req => req.get('X-Request-ID') || uuid.v4() );
+      server.use(logger(':id :remote-addr :date[iso] :method :url '
+        +'HTTP/:http-version :status :response-time ms - :res[content-length]'));
       
       // Static files
       // https://github.com/zeit/next.js/tree/4.2.3#user-content-static-file-serving-eg-images
